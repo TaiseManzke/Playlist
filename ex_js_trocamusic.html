@@ -21,11 +21,8 @@
 			
 			var playlist = [{mp3:'forsaken.mp3', titulo:'Forsaken'},{mp3:'tapestry.mp3',titulo:'Tapestry'},{mp3:'forever.mp3',titulo:'Forever'}];
 			var vmusic = document.getElementById("music");
-			var musicaAtual=0;
 			var y=0;
-			
 			var vstatus = document.getElementById('status');
-			var musica;
 
 			//
 			vmusic.src = playlist[y].mp3;
@@ -64,6 +61,7 @@
 				vmusic.src = playlist[y].mp3;
 				vmusic.play();
 				vstatus.innerHTML = "Pause";
+				vmusic.addEventListener('ended', proxima, false);
 				texto();	
 				
 				
@@ -76,6 +74,7 @@
 				vmusic.src = playlist[y].mp3;	
 				vmusic.play();
 				vstatus.innerHTML = "Pause";
+				vmusic.addEventListener('ended', proxima, false);
 				texto();
 				if (y>=2) 
 				{
